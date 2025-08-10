@@ -1,6 +1,6 @@
 import os
 
-# Sign Up Function
+
 def newuser_signup():
     print("<o><o><o><o><o> SIGN UP <o><o><o><o><o>")
     user_name = input("Enter Newuser_Name: ")
@@ -14,7 +14,7 @@ def newuser_signup():
         with open("user.txt", "a") as file:
             file.write(user_name + "," + password + "\n")
 
-# Password strength checker
+
 def strong_pswrd_check(p):
     special_symbol = "@#$%^&*()_-"
     if len(p) < 6:
@@ -28,7 +28,7 @@ def strong_pswrd_check(p):
     print("Password must contain at least one special symbol")
     return False
 
-# Login Function
+
 def login():
     print("<o><o><o><o><o> LOGIN <o><o><o><o><o>")
     user_name = input("Enter user_name: ")
@@ -51,8 +51,8 @@ def login():
     print("Login failed. Username or password is incorrect.")
     return False
 
-# Add product to stock
-# Function to add product
+
+
 def add_product():
     print("Add Product To Stock:")
     p_name = input("Enter Product Name/ID: ")
@@ -65,7 +65,7 @@ def add_product():
         file.write(p_name + " , " + p_quantity + " , " + p_net_wt + " , " + stone_wt + " , " + p_gross_wt + "\n")
     print("Product Added Successfully")
 
-# Function to view stock
+
 def view_stock():
     print("<o><o><o><o><o> STOCK <o><o><o><o><o>")
 
@@ -91,8 +91,7 @@ def view_stock():
             print(str(SI_NO) + "     | " + index[0] + "             | " + index[1] + "   | " + index[2] + "     | " + index[3] + "       | " + index[4])
             SI_NO += 1
         
-
-# Main program logic - must be outside of all functions
+
 def main():
     while True:
         print("\n<><><><><><> GOLD SHOP MANAGEMENT SYSTEM <><><><><><>")
@@ -128,5 +127,5 @@ def main():
         else:
             print("Invalid input. Please choose 1, 2 or 3.")
 
-# Start the program
+
 main()
