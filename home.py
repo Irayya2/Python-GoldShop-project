@@ -92,7 +92,7 @@ def view_stock():
             SI_NO += 1
         
 
-def main():
+def main():#main menu begins
     while True:
         print("\n<><><><><><> GOLD SHOP MANAGEMENT SYSTEM <><><><><><>")
         print("1. Sign Up")
@@ -104,7 +104,7 @@ def main():
             newuser_signup()
 
         elif choice == "2":
-            if login():
+            if login():#after login succes second menu display or stock detals display
                 while True:
                     print("\nSTOCK MENU")
                     print("1. Add Product")
