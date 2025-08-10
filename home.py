@@ -16,12 +16,12 @@ def newuser_signup():
 
 
 def strong_pswrd_check(p):
-    special_symbol = "@#$%^&*()_-"
+    special_symbol = "@#$%^&*()_-"  #its in string 
     if len(p) < 6:
         print("Create password with minimum 6 characters")
         return False
 
-    for value in special_symbol:
+    for value in special_symbol:  #taking one one value from sp symbol  by use of for loop
         if value in p:
             return True
 
@@ -40,10 +40,10 @@ def login():
 
     file = open("user.txt", "r")
     for each_line in file:
-        line = each_line.strip()
+        line = each_line.strip()#line in file modifying it to without space and new line
         if "," in line:
-            stored_user, stored_pass = line.split(",")
-            if stored_user == user_name and stored_pass == password:
+            stored_user, stored_pass = line.split(",") #modified line dividinv it into  section by comma and later storing in two different variables
+            if stored_user == user_name and stored_pass == password: #according to stored variable are matched with new entry 
                 print("Login success")
                 file.close()
                 return True
@@ -61,7 +61,7 @@ def add_product():
     stone_wt = input("Enter Stone Weight: ")
     p_gross_wt = str(float(p_net_wt) + float(stone_wt))
 
-    with open("stock.txt", "a") as file:
+    with open("stock.txt", "a") as file:# append mode due to storing before data to new data or before data file not found then create its own new file
         file.write(p_name + " , " + p_quantity + " , " + p_net_wt + " , " + stone_wt + " , " + p_gross_wt + "\n")
     print("Product Added Successfully")
 
